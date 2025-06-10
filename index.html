@@ -136,43 +136,59 @@
     text-decoration: none;
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    main {
-      flex-direction: column-reverse;
-    }
-
-    .left, .right {
-      flex: none;
-      width: 100%;
-    }
-
-    .left {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    header img {
-      margin: 0 auto 1rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      letter-spacing: 5px;
-    }
-
-    input[type="email"] {
-      padding: 1rem;
-    }
-
-    button {
-      width: 60px;
-    }
-
-    .right img {
-      height: auto;
-    }
+  /* Responsive - For handheld devices */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
   }
+  .container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .left {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  header img {
+    margin: 0 auto 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 5px;
+  }
+
+  p {
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+
+  form {
+    margin: 1rem auto;
+    width: 90%;
+  }
+
+  input[type="email"] {
+    padding: 1rem;
+  }
+
+  button {
+    width: 60px;
+  }
+
+  .right img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
 </style>
 </head>
 
@@ -199,9 +215,14 @@
     </section>
 
     <!-- Right Section -->
-    <section class="right">
-      <img src="./images/hero-desktop.jpg" alt="Fashion model" />
-    </section>
+<section class="right">
+  <picture>
+    <source srcset="./images/hero-mobile.jpg" media="(max-width: 768px)" />
+    <img src="./images/hero-desktop.jpg" alt="Fashion model" />
+  </picture>
+</section>
+
+
   </div>
 </main>
 
